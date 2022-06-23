@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
 
-export const Test: NextPage = () => {
+const Test: NextPage = () => {
   return (
     <>
       <div>lalalalalala</div>
     </>
   );
 };
+export default Test;
