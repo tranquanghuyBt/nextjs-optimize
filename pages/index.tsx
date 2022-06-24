@@ -16,7 +16,16 @@ const Home: NextPage = () => {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-R4HMT1Q83D"
         ></script>
-        <script src="../src/utils/gtag.js" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-R4HMT1Q83D');              
+          `,
+          }}
+        />
       </Head>
 
       <main className={styles.main}>
