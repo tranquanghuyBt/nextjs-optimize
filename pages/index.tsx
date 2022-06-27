@@ -36,6 +36,11 @@ const Home: NextPage = () => {
           gtag('config', 'G-R4HMT1Q83D');              
         `}
       </Script>
+      <Script strategy="afterInteractive">
+        {`
+          dataLayer.push({'event': 'optimize.activate'});
+        `}
+      </Script>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
