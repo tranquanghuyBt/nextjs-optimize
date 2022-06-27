@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+import Head from "next/head";
+import Script from "next/script";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
@@ -6,6 +8,34 @@ import Link from "next/link";
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Create next js app</title>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+            h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+            (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+            })(window,document.documentElement,'async-hide','dataLayer',4000,
+            {'OPT-PKQDQZR':true});`,
+          }}
+        />
+        <script
+          async
+          src="https://www.googleoptimize.com/optimize.js?id=OPT-PKQDQZR"
+        />
+      </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-R4HMT1Q83D"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-R4HMT1Q83D');              
+        `}
+      </Script>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
