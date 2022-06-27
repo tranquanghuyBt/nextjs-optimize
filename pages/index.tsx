@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           gtag('config', 'G-R4HMT1Q83D');              
         `}
       </Script>
-      <Script strategy="afterInteractive">
+      <Script id="optimize-activate" strategy="afterInteractive">
         {`
           dataLayer.push({'event': 'optimize.activate'});
         `}
