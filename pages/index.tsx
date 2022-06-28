@@ -6,6 +6,11 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
 const Home: NextPage = () => {
+  const experimentId = "yPTHROgqQwqErMIrY3-mSQ";
+
+  // Randomly picks a variant for the user.
+  const variationId = Math.floor(Math.random() * 2);
+  const textPage = variationId === 0 ? "Nextjs" : "Ab Test";
   return (
     <div className={styles.container}>
       <Head>
@@ -19,10 +24,19 @@ const Home: NextPage = () => {
             {'OPT-PKQDQZR':true});`,
           }}
         />
-        <script
+        {/*<script
           async
           src="https://www.googleoptimize.com/optimize.js?id=OPT-PKQDQZR"
-        />
+        /> */}
+        {/* <script
+          dangerouslySetInnerHTML={{
+            __html: `gtag('event', 'experiment_impression', {​
+              'experiment_id': '${experimentId}',
+              'variant_id': '${experimentId}.${variationId}',
+              'send_to': 'G-R4HMT1Q83D',
+            });`,
+          }}
+        /> */}
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-R4HMT1Q83D"
@@ -36,14 +50,26 @@ const Home: NextPage = () => {
           gtag('config', 'G-R4HMT1Q83D');              
         `}
       </Script>
+      <Script id="optimize-experiment" strategy="afterInteractive">
+        {`
+          gtag('event', 'experiment_impression', {​
+            'experiment_id': '${experimentId}',
+            'variant_id': '${experimentId}.${variationId}',
+            'send_to': 'G-R4HMT1Q83D',
+          });
+        `}
+      </Script>
       <Script id="optimize-activate" strategy="afterInteractive">
         {`
-          dataLayer.push({'event': 'optimize.activate'});
+          gtag('event','optimize.activate');
         `}
       </Script>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to{" "}
+          <a href="https://nextjs.org" suppressHydrationWarning>
+            {textPage}
+          </a>
         </h1>
         <Link href="/test">
           <a>Test</a>
