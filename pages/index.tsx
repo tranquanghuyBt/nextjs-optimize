@@ -28,15 +28,6 @@ const Home: NextPage = () => {
           async
           src="https://www.googleoptimize.com/optimize.js?id=OPT-PKQDQZR"
         /> */}
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `gtag('event', 'experiment_impression', {​
-              'experiment_id': '${experimentId}',
-              'variant_id': '${experimentId}.${variationId}',
-              'send_to': 'G-R4HMT1Q83D',
-            });`,
-          }}
-        /> */}
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-R4HMT1Q83D"
@@ -47,21 +38,13 @@ const Home: NextPage = () => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-R4HMT1Q83D');              
-        `}
-      </Script>
-      <Script id="optimize-experiment" strategy="afterInteractive">
-        {`
-          gtag('event', 'experiment_impression', {​
+          gtag('config', 'G-R4HMT1Q83D');  
+          gtag('event', 'experiment_impression', {
             'experiment_id': '${experimentId}',
             'variant_id': '${experimentId}.${variationId}',
             'send_to': 'G-R4HMT1Q83D',
           });
-        `}
-      </Script>
-      <Script id="optimize-activate" strategy="afterInteractive">
-        {`
-          gtag('event','optimize.activate');
+          gtag('event','optimize.activate');            
         `}
       </Script>
       <main className={styles.main}>
