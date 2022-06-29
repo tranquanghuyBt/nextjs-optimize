@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
 const Home: NextPage = () => {
-  const experimentId = "w9KpPxJQT2-yIEK9VsVfSQ";
+  const experimentId = "aSqOsoUPR8OXa5wl9yMHGQ";
 
   // Randomly picks a variant for the user.
   const variationId = Math.floor(Math.random() * 2);
@@ -14,8 +14,8 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create next js app</title>
-        <script
+        <title>Nextjs Test</title>
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
             h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
         <script
           async
           src="https://www.googleoptimize.com/optimize.js?id=OPT-PKQDQZR"
-        />
+        /> */}
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-R4HMT1Q83D"
@@ -43,8 +43,7 @@ const Home: NextPage = () => {
             'experiment_id': '${experimentId}',
             'variant_id': '${experimentId}.${variationId}',
             'send_to': 'G-R4HMT1Q83D',
-          });
-          gtag('event','optimize.activate');            
+          });            
         `}
       </Script>
       <main className={styles.main}>
