@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
 const Home: NextPage = () => {
-  const experimentId = "yPTHROgqQwqErMIrY3-mSQ";
+  const experimentId = "w9KpPxJQT2-yIEK9VsVfSQ";
 
   // Randomly picks a variant for the user.
   const variationId = Math.floor(Math.random() * 2);
