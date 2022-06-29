@@ -24,10 +24,10 @@ const Home: NextPage = () => {
             {'OPT-PKQDQZR':true});`,
           }}
         />
-        {/*<script
+        <script
           async
           src="https://www.googleoptimize.com/optimize.js?id=OPT-PKQDQZR"
-        /> */}
+        />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-R4HMT1Q83D"
